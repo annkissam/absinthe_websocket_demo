@@ -1,0 +1,23 @@
+<h2>Show Timesheet</h2>
+
+<ul>
+
+  <li>
+    <strong>Notes:</strong>
+    <%= @timesheet.notes %>
+  </li>
+
+  <li>
+    <strong>Employee email:</strong>
+    <%= @timesheet.employee_email %>
+  </li>
+
+  <li>
+    <strong>Employee:</strong>
+    <%= @timesheet.employee_id %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: timesheet_path(@conn, :edit, @timesheet) %></span>
+<span><%= link "Back", to: timesheet_path(@conn, :index) %></span>

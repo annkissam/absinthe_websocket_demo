@@ -1,0 +1,5 @@
+<h2>Edit Timesheet</h2>
+
+<%= render "form.html", Map.put(assigns, :action, timesheet_path(@conn, :update, @timesheet)) %>
+
+<span><%= link "Back", to: timesheet_path(@conn, :index) %></span>

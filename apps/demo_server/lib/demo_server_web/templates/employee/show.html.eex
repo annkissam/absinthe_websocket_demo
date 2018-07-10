@@ -1,0 +1,18 @@
+<h2>Show Employee</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @employee.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @employee.email %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: employee_path(@conn, :edit, @employee) %></span>
+<span><%= link "Back", to: employee_path(@conn, :index) %></span>
