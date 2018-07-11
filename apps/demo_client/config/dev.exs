@@ -56,3 +56,8 @@ config :demo_client, DemoClient.Repo,
   database: "demo_client_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :demo_client, DemoServerQLApi,
+  client: DemoServerQLApi.Client,
+  query_caller: CommonGraphQLClient.Caller.Http,
+  api_url: "http://127.0.0.1:4000/api"
