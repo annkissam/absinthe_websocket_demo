@@ -14,7 +14,7 @@ defmodule DemoClient.Application do
       supervisor(DemoClientWeb.Endpoint, []),
       # Start your own worker by calling: DemoClient.Worker.start_link(arg1, arg2, arg3)
       # worker(DemoClient.Worker, [arg1, arg2, arg3]),
-    ]
+    ] ++ [DemoServerQLApi.Client.supervisor()]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options

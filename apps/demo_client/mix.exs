@@ -38,7 +38,8 @@ defmodule DemoClient.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 1.1"},
-      {:common_graphql_client, "~> 0.2.1", path: "~/elixir/common_graphql_client"},
+      {:common_graphql_client, path: "~/elixir/common_graphql_client"},
+      {:absinthe_websocket, path: "~/elixir/absinthe_websocket", override: true},
       {:phoenix, "~> 1.3.3"},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},

@@ -60,4 +60,7 @@ config :demo_client, DemoClient.Repo,
 config :demo_client, DemoServerQLApi,
   client: DemoServerQLApi.Client,
   query_caller: CommonGraphQLClient.Caller.Http,
-  api_url: "http://127.0.0.1:4000/api"
+  http_api_url: "http://127.0.0.1:4000/api",
+  subscription_caller: CommonGraphQLClient.Caller.WebSocket,
+  websocket_api_url: "ws://127.0.0.1:4000/socket/websocket"
+
