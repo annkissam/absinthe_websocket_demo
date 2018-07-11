@@ -14,4 +14,12 @@ defmodule DemoServerQL.Schema do
       resolve &DemoServerQL.Cache.EmployeeResolver.get/2
     end
   end
+
+  subscription do
+    field :employee_created, :employee do
+      config fn _, _ ->
+        {:ok, topic: true}
+      end
+    end
+  end
 end

@@ -1,5 +1,6 @@
 defmodule DemoServerWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :demo_server
+  use Absinthe.Phoenix.Endpoint
 
   socket "/socket", DemoServerWeb.UserSocket
 

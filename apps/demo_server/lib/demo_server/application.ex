@@ -12,6 +12,7 @@ defmodule DemoServer.Application do
       supervisor(DemoServer.Repo, []),
       # Start the endpoint when the application starts
       supervisor(DemoServerWeb.Endpoint, []),
+      supervisor(Absinthe.Subscription, [DemoServerWeb.Endpoint])
       # Start your own worker by calling: DemoServer.Worker.start_link(arg1, arg2, arg3)
       # worker(DemoServer.Worker, [arg1, arg2, arg3]),
     ]
