@@ -21,6 +21,20 @@ defmodule DemoServerWeb.Router do
     get "/", PageController, :index
   end
 
+  if Mix.env == :dev do
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: DemoServerQL.Schema,
+      socket: DemoServerWeb.UserSocket,
+      interface: :advanced
+  end
+
+  scope "/api" do
+    pipe_through [:api]
+
+    forward "/", Absinthe.Plug,
+      schema: DemoServerQL.Schema
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", DemoServerWeb do
   #   pipe_through :api
